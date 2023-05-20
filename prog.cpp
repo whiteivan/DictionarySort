@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::cerr;
 
-int main()
+int main(int argc, char* argv[])
 {
 	std::cout<<"Hello world";
 	return 0;
