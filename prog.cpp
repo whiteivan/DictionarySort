@@ -46,5 +46,11 @@ int main(int argc, char* argv[])
 	{
 		dataBase.push_back(line);
 	}
+	list<string> dataSort = SortD(dataBase);
+	ofstream outFile(argv[2], ofstream::app);
+	for each (auto s in dataSort)
+	{
+		outFile << s << "\n";
+	}
 	return 0;
 }
