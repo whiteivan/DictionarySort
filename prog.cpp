@@ -13,25 +13,23 @@ using std::cerr;
 
 list<string> SortD(list<string>& dic)
 {
-	for (auto i = dic.begin();i != dic.end();i++)
+	for (auto i = dic.begin(); i != dic.end(); ++i)
 	{
-		auto j = ++i;
-		--i;
-		for (auto a = i->begin(); a!= i -> end(); a++)
+		for (auto j = std::next(i); j != dic.end(); ++j)
 		{
-			if (i[a]==j[a])
+			for (auto a = i->begin(); a != i->end(); ++a)
 			{
-				continue;
-			}
-			else if (i[a]<j[a])
-			{
-				break;
-			} else
-			{
-				string temp = *j;
-				dic.erase(j);
-				dic.insert(i,temp);
-				break;
+				if (*a > *(j->begin()))
+				{
+					std::swap(*i, *j);
+					break;
+				} else if (*a == *(j->begin()))
+				{
+					continue;
+				} else
+				{
+					break;
+				}
 			}
 		}
 	}
