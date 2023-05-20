@@ -13,6 +13,13 @@ using std::cerr;
 
 int main(int argc, char* argv[])
 {
-	std::cout<<"Hello world";
+	ifstream inFile(argv[1]);
+	vector<string> dataBase;
+	string line;
+	while (getline(inFile, line))
+	{
+		dataBase.push_back(line);
+	}
+
 	return 0;
 }
