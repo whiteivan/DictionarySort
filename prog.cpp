@@ -15,8 +15,9 @@ list<string> SortD(list<string>& dic)
 {
 	for (auto i = dic.begin();i != dic.end();i++)
 	{
-		auto j = i + 1;
-		for (auto a = i.begin(); a!= i.end(); a++)
+		auto j = ++i;
+		--i;
+		for (auto a = i->begin(); a!= i -> end(); a++)
 		{
 			if (i[a]==j[a])
 			{
