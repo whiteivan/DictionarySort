@@ -19,17 +19,22 @@ list<string> SortD(list<string>& dic)
 		{
 			for (auto a = i->begin(); a != i->end(); ++a)
 			{
-				if (*a > *(j->begin()))
+				for (auto b = j->begin(); b != j->end(); ++b)
 				{
-					std::swap(*i, *j);
-					break;
-				} else if (*a == *(j->begin()))
-				{
-					continue;
-				} else
-				{
-					break;
+					if (*a > *b)
+					{
+						std::swap(*i, *j);
+						break;
+					} else if (*a == *b)
+					{
+						++a;
+						continue;
+					} else
+					{
+						break;
+					}
 				}
+				break;
 			}
 		}
 	}
@@ -46,7 +51,7 @@ int main(int argc, char* argv[])
 		dataBase.push_back(line);
 	}
 	list<string> dataSort = SortD(dataBase);
-	ofstream outFile(argv[2], ofstream::app);
+	ofstream outFile(argv[2]);
 	for each (auto s in dataSort)
 	{
 		outFile << s << "\n";
