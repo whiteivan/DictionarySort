@@ -3,13 +3,7 @@
 #include <string>
 #include <list>
 
-using std::string;
-using std::list;
-using std::ifstream;
-using std::ofstream;
-using std::cin;
-using std::cout;
-using std::cerr;
+using namespace std;
 
 list<string> SortD(list<string>& dic)
 {
