@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 	}
 	list<string> dataSort = SortD(dataBase);
 	ofstream outFile(argv[2]);
-	for each (auto s in dataSort)
+	for (const auto& s : dataSort)
 	{
 		outFile << s << "\n";
 	}
